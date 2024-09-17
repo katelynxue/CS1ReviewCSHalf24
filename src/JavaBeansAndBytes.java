@@ -49,12 +49,12 @@ public class JavaBeansAndBytes {
         baristasChoice();
 
         // TODO
-        public void
+        Drink order1 = new Drink(8,"ice water",true);
         // Create two CoffeeDrink objects
 
         // TODO
         // Print out the order details
-
+        order1.printInfo();
 
     }
 
@@ -106,6 +106,21 @@ public class JavaBeansAndBytes {
         // TODO
         // Make this method generate a random decimal between 0 and 1
         // and print one of four drink recommendations based on its value.
+        System.out.println();
+        double r = Math.random();
+        System.out.print("The barista recommends ");
+        if (r < 0.25){
+            System.out.println("cappuccino");
+        }
+        else if (r < 0.5) {
+            System.out.println("green tea");
+        }
+        else if (r < 0.75) {
+            System.out.println("ice water");
+        }
+        else {
+            System.out.println("cold brew");
+        }
     }
 }
 
