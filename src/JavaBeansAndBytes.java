@@ -49,6 +49,7 @@ public class JavaBeansAndBytes {
         baristasChoice();
 
         // TODO
+        public void
         // Create two CoffeeDrink objects
 
         // TODO
