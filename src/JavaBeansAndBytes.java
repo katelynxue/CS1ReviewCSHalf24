@@ -40,29 +40,70 @@ public class JavaBeansAndBytes {
         // Update the year founded and print the new yearFounded in a sentence
 
         // Calling methods
-        randomDiscount();
+        System.out.println("PRINTING RANDOM DISCOUNT" + randomDiscount());; // treat randomDiscount() as an int
         // TODO
 
         // Add parameter to specialOfTheDay (drink of your choice)
         specialOfTheDay("hot chocolate");
         countCups();
-        baristasChoice();
+        System.out.println("The barista recommends: "+baristasChoice());
 
         // TODO
-        Drink order1 = new Drink(8,"ice water",true);
         // Create two CoffeeDrink objects
+        Drink order1 = new Drink(8,"ice water",true);
+        Drink order2 = new Drink();
+        Drink order3 = new Drink(9);
 
         // TODO
         // Print out the order details
         order1.printInfo();
+        order2.printInfo();
+        order3.printInfo();
 
+        System.out.println(order1.getNumberOfCups());
+        order1.setNumberOfCups(4);
+        System.out.println(order1.getNumberOfCups());
+
+        System.out.println(order2.getDrinkType());
+        order2.setDrinkType();
+        System.out.println(order2.getDrinkType());
+
+
+        System.out.println( sum(7, 5) );
+
+    }// end of constructor
+
+    public int sum(int a, int b){
+        int c = a+b;
+        return c;
     }
 
+
     // Method to generate a random discount
-    public void randomDiscount() {
+    public int randomDiscount() {
         // TODO
         int r = (int)(Math.random()*31);
-        System.out.println("Random discount is " + r + "%!");
+
+        while(r<26) { // in this () goes the condition which, as long as the condition is true,
+            // the loop will keep running
+            r = (int) (Math.random() * 31);
+        }
+        return r;
+
+//            System.out.println("Random discount is " + r + "%!");
+//
+//
+//        // now do it with a for loop
+//        for(int x=0; x<1; x=x-1){
+//            System.out.println(x);
+//            r=(int)(Math.random()*31);
+//            System.out.println("Random discount is " + r + "%!");
+//            if(r>=26){
+//                break;
+//            }
+//        }
+//        System.out.println("end of for loop");
+
     }
 
 
@@ -102,25 +143,26 @@ public class JavaBeansAndBytes {
     }
 
     // Method to recommend a coffee based on a random number
-    public void baristasChoice() {
+    public String baristasChoice() {
         // TODO
         // Make this method generate a random decimal between 0 and 1
         // and print one of four drink recommendations based on its value.
         System.out.println();
         double r = Math.random();
-        System.out.print("The barista recommends ");
         if (r < 0.25){
-            System.out.println("cappuccino");
+            return "cappuccino";
         }
         else if (r < 0.5) {
-            System.out.println("green tea");
+            return "green tea";
         }
         else if (r < 0.75) {
-            System.out.println("ice water");
+            return"ice water";
         }
         else {
-            System.out.println("cold brew");
+            return"cold brew";
         }
     }
 }
+
+
 
